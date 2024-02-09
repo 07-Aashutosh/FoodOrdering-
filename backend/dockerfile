@@ -1,0 +1,11 @@
+FROM python:latest
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+# Set work directory code dir made
+WORKDIR /code   
+# Install dependencies
+COPY requirement.txt /code/
+RUN pip install -r requirement.txt
+# Copy project
+COPY . /code/
